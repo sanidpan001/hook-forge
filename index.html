@@ -1,0 +1,1951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>HookForge - Free, Unlimited, No Watermark | HookForge</title>
+
+  <meta
+    name="description"
+    content="Generate scroll-stopping Instagram Reels and YouTube Shorts hooks instantly with AI. Free, unlimited, fast, and easy to use with no watermark."
+  >
+  <meta
+    name="keywords"
+    content="Instagram Reels hook generator, YouTube Shorts hook generator, AI hook generator, viral hook generator, reels hooks, shorts hooks, content creator tools"
+  >
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="HookForge">
+  <meta name="theme-color" content="#070b17">
+
+  <link rel="canonical" href="https://hookforge.fixoraa.tech/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="HookForge - AI Reels & Shorts Hook Generator">
+  <meta
+    property="og:description"
+    content="Create powerful hooks for Instagram Reels and YouTube Shorts with AI."
+  >
+  <meta property="og:url" content="https://hookforge.fixoraa.tech/">
+  <meta property="og:site_name" content="HookForge">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HookForge - AI Reels & Shorts Hook Generator">
+  <meta
+    name="twitter:description"
+    content="Generate engaging hooks for short-form videos with AI."
+  >
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: [
+              "Inter",
+              "ui-sans-serif",
+              "system-ui",
+              "-apple-system",
+              "BlinkMacSystemFont",
+              "Segoe UI",
+              "sans-serif"
+            ]
+          },
+          animation: {
+            "float": "float 6s ease-in-out infinite",
+            "pulse-soft": "pulseSoft 2s ease-in-out infinite",
+            "slide-up": "slideUp .45s ease-out",
+            "spin-slow": "spin 1.4s linear infinite"
+          },
+          keyframes: {
+            float: {
+              "0%,100%": {
+                transform: "translateY(0)"
+              },
+              "50%": {
+                transform: "translateY(-12px)"
+              }
+            },
+            pulseSoft: {
+              "0%,100%": {
+                opacity: ".65"
+              },
+              "50%": {
+                opacity: "1"
+              }
+            },
+            slideUp: {
+              "0%": {
+                opacity: "0",
+                transform: "translateY(18px)"
+              },
+              "100%": {
+                opacity: "1",
+                transform: "translateY(0)"
+              }
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 15% 10%, rgba(99, 102, 241, .16), transparent 28%),
+        radial-gradient(circle at 85% 15%, rgba(236, 72, 153, .14), transparent 25%),
+        #070b17;
+      color: #e5e7eb;
+    }
+
+    .glass {
+      background: rgba(15, 23, 42, .68);
+      border: 1px solid rgba(255, 255, 255, .09);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .glass-light {
+      background: rgba(255, 255, 255, .045);
+      border: 1px solid rgba(255, 255, 255, .08);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .gradient-text {
+      background: linear-gradient(
+        90deg,
+        #a78bfa,
+        #ec4899,
+        #38bdf8
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .gradient-border {
+      position: relative;
+    }
+
+    .gradient-border::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      z-index: -1;
+      border-radius: 1.05rem;
+      background: linear-gradient(
+        120deg,
+        rgba(129, 140, 248, .5),
+        rgba(236, 72, 153, .35),
+        rgba(56, 189, 248, .35)
+      );
+    }
+
+    .ad-wrapper {
+      width: 100%;
+      min-height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .ad-inner {
+      width: 728px;
+      max-width: 100%;
+      min-height: 90px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    @media (max-width: 767px) {
+      .ad-wrapper {
+        min-height: 70px;
+        padding: 0 8px;
+      }
+
+      .ad-inner {
+        min-height: 70px;
+        transform: scale(.7);
+        transform-origin: center;
+      }
+    }
+
+    .hook-card {
+      transition:
+        transform .2s ease,
+        border-color .2s ease,
+        background .2s ease;
+    }
+
+    .hook-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(167, 139, 250, .35);
+      background: rgba(255, 255, 255, .06);
+    }
+
+    textarea,
+    input,
+    select {
+      color-scheme: dark;
+    }
+
+    textarea::placeholder,
+    input::placeholder {
+      color: #64748b;
+    }
+
+    .scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(148, 163, 184, .25);
+      border-radius: 999px;
+    }
+
+    .prose-custom h2 {
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      font-size: 1.65rem;
+      line-height: 1.3;
+      font-weight: 800;
+      color: #f8fafc;
+    }
+
+    .prose-custom h3 {
+      margin-top: 1.8rem;
+      margin-bottom: .7rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #e2e8f0;
+    }
+
+    .prose-custom p {
+      margin-top: .9rem;
+      line-height: 1.85;
+      color: #94a3b8;
+    }
+
+    .prose-custom ul {
+      margin-top: 1rem;
+      padding-left: 1.4rem;
+      color: #94a3b8;
+    }
+
+    .prose-custom li {
+      margin: .55rem 0;
+      line-height: 1.7;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+    }
+
+    .faq-icon {
+      transition: transform .3s ease;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "HookForge",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web Browser",
+    "description": "AI-powered Instagram Reels and YouTube Shorts hook generator.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "AI hook generation",
+      "Instagram Reels hooks",
+      "YouTube Shorts hooks",
+      "Multiple hook styles",
+      "Copy generated hooks",
+      "Download generated hooks"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Instagram Reels and YouTube Shorts Hook Generator",
+    "description": "Learn how to create stronger hooks for short-form videos using an AI hook generator.",
+    "author": {
+      "@type": "Organization",
+      "name": "HookForge"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HookForge"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://hookforge.example.com/"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a Reels and Shorts hook?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A hook is the opening idea, sentence, visual concept, or statement designed to make viewers pay attention during the first moments of a short-form video."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is HookForge free to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "HookForge is designed as a free AI hook generation tool with unlimited free usage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use these hooks for Instagram Reels?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can generate hook ideas specifically designed for Instagram Reels."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use HookForge for YouTube Shorts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The generator can create hook ideas suitable for YouTube Shorts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I copy or download my generated hooks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Generated hooks can be copied individually or downloaded as a text file."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does a good hook guarantee viral views?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. A hook can improve the opening of a video, but views also depend on content quality, audience interest, retention, timing, topic, distribution, and many other factors."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body class="min-h-screen font-sans">
+
+  <!-- HEADER -->
+  <header
+    class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl"
+  >
+    <div
+      class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8"
+    >
+      <a
+        href="#top"
+        class="flex items-center gap-3"
+        aria-label="HookForge Home"
+      >
+        <svg
+          width="42"
+          height="42"
+          viewBox="0 0 48 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <rect
+            x="2"
+            y="2"
+            width="44"
+            height="44"
+            rx="14"
+            fill="url(#logoGradient)"
+          />
+          <path
+            d="M15 24.5C15 18.7 18.8 15 24.3 15C28.4 15 31.3 17.1 32.5 20.5"
+            stroke="white"
+            stroke-width="3.2"
+            stroke-linecap="round"
+          />
+          <path
+            d="M33 23.5C33 29.3 29.2 33 23.7 33C19.6 33 16.7 30.9 15.5 27.5"
+            stroke="white"
+            stroke-width="3.2"
+            stroke-linecap="round"
+          />
+          <path
+            d="M24 20L28 24L24 28"
+            stroke="white"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <defs>
+            <linearGradient
+              id="logoGradient"
+              x1="5"
+              y1="5"
+              x2="43"
+              y2="43"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#8B5CF6"/>
+              <stop offset=".52" stop-color="#EC4899"/>
+              <stop offset="1" stop-color="#38BDF8"/>
+            </linearGradient>
+          </defs>
+        </svg>
+
+        <div>
+          <div class="text-lg font-black tracking-tight text-white">
+            Hook<span class="gradient-text">Forge</span>
+          </div>
+          <div class="hidden text-[10px] uppercase tracking-[.25em] text-slate-500 sm:block">
+            Creator Intelligence
+          </div>
+        </div>
+      </a>
+
+      <nav class="flex items-center gap-2 sm:gap-5">
+        <a
+          href="#top"
+          class="rounded-lg px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white"
+        >
+          Home
+        </a>
+
+        <a
+          href="https://fixoraa.tech"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm font-semibold text-slate-200 transition hover:border-violet-400/30 hover:bg-violet-500/10 hover:text-white"
+        >
+          More Tools
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="relative overflow-hidden">
+      <div class="pointer-events-none absolute -left-20 top-20 h-64 w-64 rounded-full bg-violet-600/10 blur-3xl"></div>
+      <div class="pointer-events-none absolute -right-20 top-10 h-72 w-72 rounded-full bg-pink-600/10 blur-3xl"></div>
+
+      <div class="mx-auto max-w-7xl px-4 pb-8 pt-12 sm:px-6 sm:pt-16 lg:px-8">
+
+        <div class="mx-auto max-w-4xl text-center">
+
+          <div
+            class="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-4 py-2 text-xs font-bold text-emerald-300"
+          >
+            <span class="h-2 w-2 animate-pulse rounded-full bg-emerald-400"></span>
+            Unlimited Free Usage
+          </div>
+
+          <h1
+            class="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl"
+          >
+            Instagram Reels &amp;
+            <span class="gradient-text">YouTube Shorts</span>
+            Hook Generator
+          </h1>
+
+          <p
+            class="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg"
+          >
+            Turn your video idea into attention-grabbing opening hooks with AI.
+            Generate multiple angles for Reels, Shorts, creators, brands,
+            educators, and businesses in seconds.
+          </p>
+
+          <div class="mt-7 flex flex-wrap justify-center gap-3 text-xs text-slate-400">
+            <span class="rounded-full border border-white/10 bg-white/5 px-3 py-2">
+              ⚡ AI Powered
+            </span>
+            <span class="rounded-full border border-white/10 bg-white/5 px-3 py-2">
+              🎯 Multiple Styles
+            </span>
+            <span class="rounded-full border border-white/10 bg-white/5 px-3 py-2">
+              📱 Reels + Shorts
+            </span>
+            <span class="rounded-full border border-white/10 bg-white/5 px-3 py-2">
+              📋 One-Click Copy
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOP AD -->
+    <section
+      class="mx-auto max-w-7xl px-4 pb-8 sm:px-6 lg:px-8"
+      aria-label="Advertisement"
+    >
+      <div class="ad-wrapper rounded-2xl border border-white/5 bg-black/10">
+        <div class="ad-inner">
+          <script>
+            atOptions = {
+              'key' : '4e68ac77881c17fe128a46565d9a4e8c',
+              'format' : 'iframe',
+              'height' : 90,
+              'width' : 728,
+              'params' : {}
+            };
+          </script>
+          <script src="https://www.highrevenueformat.com/4e68ac77881c17fe128a46565d9a4e8c/invoke.js"></script>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN TOOL -->
+    <section
+      id="generator"
+      class="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8"
+    >
+      <div class="gradient-border relative">
+        <div class="glass rounded-2xl p-5 shadow-2xl shadow-black/30 sm:p-7">
+
+          <div class="mb-7 flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-[.2em] text-violet-300">
+                AI Hook Studio
+              </p>
+              <h2 class="mt-1 text-2xl font-black text-white">
+                Create Your Hooks
+              </h2>
+              <p class="mt-1 text-sm text-slate-500">
+                Describe your content and let AI generate opening ideas.
+              </p>
+            </div>
+
+            <div
+              class="inline-flex w-fit items-center gap-2 rounded-xl border border-violet-400/20 bg-violet-400/10 px-3 py-2 text-xs font-semibold text-violet-200"
+            >
+              <span>✦</span>
+              AI Creative Engine
+            </div>
+          </div>
+
+          <div class="grid gap-6 lg:grid-cols-2">
+
+            <!-- INPUT SIDE -->
+            <div class="space-y-5">
+
+              <div>
+                <label
+                  for="topic"
+                  class="mb-2 block text-sm font-bold text-slate-200"
+                >
+                  What is your video about?
+                </label>
+
+                <textarea
+                  id="topic"
+                  rows="7"
+                  maxlength="1200"
+                  class="scrollbar w-full resize-y rounded-2xl border border-white/10 bg-slate-950/70 p-4 text-sm leading-7 text-white outline-none transition placeholder:text-slate-600 focus:border-violet-400/50 focus:ring-4 focus:ring-violet-500/10"
+                  placeholder="Example: I want to make a Reel explaining 5 AI tools that can help students save time..."
+                ></textarea>
+
+                <div class="mt-2 flex justify-between text-xs text-slate-600">
+                  <span>Be specific for more relevant hooks.</span>
+                  <span id="charCount">0 / 1200</span>
+                </div>
+              </div>
+
+              <div class="grid gap-4 sm:grid-cols-2">
+
+                <div>
+                  <label
+                    for="platform"
+                    class="mb-2 block text-sm font-bold text-slate-200"
+                  >
+                    Platform
+                  </label>
+
+                  <select
+                    id="platform"
+                    class="w-full rounded-xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white outline-none focus:border-violet-400/50 focus:ring-4 focus:ring-violet-500/10"
+                  >
+                    <option value="Instagram Reels">Instagram Reels</option>
+                    <option value="YouTube Shorts">YouTube Shorts</option>
+                    <option value="Both Instagram Reels and YouTube Shorts">
+                      Both
+                    </option>
+                  </select>
+                </div>
+
+                <div>
+                  <label
+                    for="niche"
+                    class="mb-2 block text-sm font-bold text-slate-200"
+                  >
+                    Niche
+                  </label>
+
+                  <input
+                    id="niche"
+                    type="text"
+                    maxlength="100"
+                    class="w-full rounded-xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white outline-none placeholder:text-slate-600 focus:border-violet-400/50 focus:ring-4 focus:ring-violet-500/10"
+                    placeholder="e.g. Fitness, Finance"
+                  >
+                </div>
+
+              </div>
+
+              <div>
+                <label
+                  for="style"
+                  class="mb-2 block text-sm font-bold text-slate-200"
+                >
+                  Hook style
+                </label>
+
+                <select
+                  id="style"
+                  class="w-full rounded-xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white outline-none focus:border-violet-400/50 focus:ring-4 focus:ring-violet-500/10"
+                >
+                  <option value="Curiosity">Curiosity</option>
+                  <option value="Bold and Contrarian">Bold / Contrarian</option>
+                  <option value="Problem and Solution">Problem / Solution</option>
+                  <option value="Storytelling">Storytelling</option>
+                  <option value="Shock and Surprise">Shock / Surprise</option>
+                  <option value="Question">Question</option>
+                  <option value="Authority">Authority / Expert</option>
+                  <option value="Relatable">Relatable</option>
+                  <option value="FOMO">FOMO</option>
+                  <option value="Mixed">Mixed Styles</option>
+                </select>
+              </div>
+
+              <div>
+                <label
+                  for="tone"
+                  class="mb-2 block text-sm font-bold text-slate-200"
+                >
+                  Tone
+                </label>
+
+                <select
+                  id="tone"
+                  class="w-full rounded-xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white outline-none focus:border-violet-400/50 focus:ring-4 focus:ring-violet-500/10"
+                >
+                  <option value="Engaging and natural">Engaging & Natural</option>
+                  <option value="Bold and confident">Bold & Confident</option>
+                  <option value="Friendly and conversational">Friendly & Conversational</option>
+                  <option value="Professional">Professional</option>
+                  <option value="Energetic">Energetic</option>
+                  <option value="Mysterious">Mysterious</option>
+                </select>
+              </div>
+
+              <button
+                id="generateBtn"
+                type="button"
+                class="group flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-violet-600 via-fuchsia-600 to-pink-600 px-5 py-4 text-sm font-black text-white shadow-lg shadow-fuchsia-900/20 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-fuchsia-900/30 active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                <svg
+                  id="generateIcon"
+                  width="19"
+                  height="19"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 3v18"/>
+                  <path d="M3 12h18"/>
+                  <path d="m5 5 14 14"/>
+                  <path d="m19 5-14 14"/>
+                </svg>
+
+                <span id="generateText">Generate Hooks</span>
+              </button>
+
+              <div
+                id="errorBox"
+                class="hidden rounded-xl border border-red-400/20 bg-red-400/10 p-4 text-sm text-red-300"
+                role="alert"
+              ></div>
+
+            </div>
+
+            <!-- OUTPUT SIDE -->
+            <div class="min-h-[500px] rounded-2xl border border-white/10 bg-slate-950/45 p-4 sm:p-5">
+
+              <div class="mb-4 flex items-center justify-between gap-3">
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-[.18em] text-slate-500">
+                    Generated Results
+                  </p>
+                  <h3 class="mt-1 font-bold text-white">
+                    Your Hook Ideas
+                  </h3>
+                </div>
+
+                <button
+                  id="downloadBtn"
+                  type="button"
+                  class="hidden rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-xs font-bold text-slate-300 transition hover:bg-white/10 hover:text-white"
+                >
+                  Download
+                </button>
+              </div>
+
+              <div id="results" class="space-y-3">
+
+                <div
+                  id="emptyState"
+                  class="flex min-h-[400px] flex-col items-center justify-center rounded-xl border border-dashed border-white/10 px-6 text-center"
+                >
+                  <div class="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500/20 to-pink-500/20 text-2xl">
+                    ✦
+                  </div>
+
+                  <h4 class="text-lg font-bold text-white">
+                    Your hooks will appear here
+                  </h4>
+
+                  <p class="mt-2 max-w-sm text-sm leading-6 text-slate-500">
+                    Enter your video idea, choose your platform and style,
+                    then generate a set of ready-to-use hook concepts.
+                  </p>
+                </div>
+
+                <div
+                  id="loadingState"
+                  class="hidden min-h-[400px] flex-col items-center justify-center text-center"
+                >
+                  <div class="mb-5 h-10 w-10 animate-spin rounded-full border-2 border-violet-400/20 border-t-violet-400"></div>
+
+                  <h4 class="font-bold text-white">
+                    Forging your hooks...
+                  </h4>
+
+                  <p class="mt-2 text-sm text-slate-500">
+                    Creating multiple angles for your video.
+                  </p>
+                </div>
+
+                <div id="hookResults" class="hidden space-y-3"></div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 grid gap-3 sm:grid-cols-3">
+
+            <div class="glass-light rounded-xl p-4">
+              <div class="mb-2 text-lg">🎯</div>
+              <h3 class="text-sm font-bold text-white">
+                Audience Focused
+              </h3>
+              <p class="mt-1 text-xs leading-5 text-slate-500">
+                Generate hooks around your topic and intended viewer.
+              </p>
+            </div>
+
+            <div class="glass-light rounded-xl p-4">
+              <div class="mb-2 text-lg">🧠</div>
+              <h3 class="text-sm font-bold text-white">
+                Multiple Angles
+              </h3>
+              <p class="mt-1 text-xs leading-5 text-slate-500">
+                Explore curiosity, storytelling, questions, FOMO and more.
+              </p>
+            </div>
+
+            <div class="glass-light rounded-xl p-4">
+              <div class="mb-2 text-lg">⚡</div>
+              <h3 class="text-sm font-bold text-white">
+                Ready to Adapt
+              </h3>
+              <p class="mt-1 text-xs leading-5 text-slate-500">
+                Copy, edit, test and adapt your favorite opening lines.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- BOTTOM AD -->
+    <section
+      class="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8"
+      aria-label="Advertisement"
+    >
+      <div class="ad-wrapper rounded-2xl border border-white/5 bg-black/10">
+        <div class="ad-inner">
+          <script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="464498"></script>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO ARTICLE -->
+    <article
+      class="mx-auto max-w-5xl px-4 pb-16 sm:px-6 lg:px-8"
+    >
+
+      <div class="mb-10 text-center">
+        <p class="text-xs font-bold uppercase tracking-[.2em] text-violet-300">
+          Creator Guide
+        </p>
+
+        <h2 class="mt-3 text-3xl font-black tracking-tight text-white sm:text-4xl">
+          Instagram Reels and YouTube Shorts Hook Generator
+        </h2>
+
+        <p class="mx-auto mt-4 max-w-3xl text-sm leading-7 text-slate-500">
+          Learn why strong hooks matter, how to write better openings,
+          and how to turn simple video ideas into more compelling short-form content.
+        </p>
+      </div>
+
+      <div class="prose-custom">
+
+        <h2>What Is an Instagram Reels and YouTube Shorts Hook?</h2>
+
+        <p>
+          A hook is the opening idea, statement, question, visual concept,
+          or promise that introduces a short-form video. On platforms such
+          as Instagram Reels and YouTube Shorts, the beginning of a video
+          plays an important role because viewers can quickly move to another
+          piece of content. A useful hook gives the audience a reason to
+          continue watching and understand what the video is about.
+        </p>
+
+        <p>
+          HookForge is an AI-powered hook generator designed to help creators
+          brainstorm opening lines and concepts for short-form videos. Instead
+          of starting with a blank screen, you can describe your topic, select
+          a platform, choose a style, and generate several different ideas.
+          You can then adapt the suggestions to match your own personality,
+          content strategy, audience, and brand voice.
+        </p>
+
+        <h2>Why Are Hooks Important for Short-Form Videos?</h2>
+
+        <p>
+          Short-form content competes for attention in a fast-moving feed.
+          A viewer may encounter dozens or hundreds of videos in a single
+          session. Because of that environment, the opening moments need to
+          communicate enough value or curiosity to encourage continued
+          attention.
+        </p>
+
+        <p>
+          A strong hook does not have to be complicated. In many cases,
+          a simple question, unexpected observation, useful promise,
+          relatable problem, or intriguing statement can provide a clear
+          starting point. The most appropriate approach depends on the
+          subject, audience, creator, and purpose of the video.
+        </p>
+
+        <h3>Examples of Hook Directions</h3>
+
+        <ul>
+          <li>Start with a surprising observation about the topic.</li>
+          <li>Ask a question that your target viewer is already thinking about.</li>
+          <li>Introduce a common mistake and explain how to avoid it.</li>
+          <li>Promise a practical lesson or useful result.</li>
+          <li>Begin a story at an interesting moment rather than explaining everything first.</li>
+          <li>Challenge a common assumption while providing useful context.</li>
+        </ul>
+
+        <h2>How to Use the AI Hook Generator</h2>
+
+        <h3>1. Enter Your Video Topic</h3>
+
+        <p>
+          Start by describing what your video is about. The more useful
+          context you provide, the easier it is for the generator to create
+          relevant suggestions. For example, instead of entering only
+          "fitness," you could describe a video about beginner mistakes
+          people make when starting a gym routine.
+        </p>
+
+        <h3>2. Select Your Platform</h3>
+
+        <p>
+          Choose Instagram Reels, YouTube Shorts, or both. Although the
+          fundamentals of short-form storytelling overlap across platforms,
+          creators may use different presentation styles depending on their
+          audience and content strategy.
+        </p>
+
+        <h3>3. Add Your Niche</h3>
+
+        <p>
+          Adding a niche gives the AI more context. Finance, fitness,
+          education, technology, gaming, beauty, food, business, travel,
+          productivity, and entertainment can all require different language
+          and audience expectations.
+        </p>
+
+        <h3>4. Choose a Hook Style</h3>
+
+        <p>
+          HookForge provides several creative directions. Curiosity hooks can
+          create an information gap. Question hooks can directly involve the
+          viewer. Storytelling hooks can establish an intriguing narrative.
+          Problem-and-solution hooks can introduce a pain point and promise
+          useful information.
+        </p>
+
+        <h3>5. Select a Tone</h3>
+
+        <p>
+          Tone affects how the opening sounds. A finance creator may want a
+          confident and educational tone, while a lifestyle creator might
+          prefer something conversational and relatable. Choosing the right
+          tone can make a generated hook easier to adapt to your existing
+          content style.
+        </p>
+
+        <h2>Benefits of Using an AI Hook Generator</h2>
+
+        <h3>Faster Brainstorming</h3>
+
+        <p>
+          One of the biggest advantages of an AI brainstorming tool is speed.
+          Instead of manually thinking of dozens of opening ideas, you can
+          generate multiple directions and choose the concepts that fit your
+          video. This can be especially useful when publishing frequently.
+        </p>
+
+        <h3>More Creative Angles</h3>
+
+        <p>
+          Creators sometimes become attached to the first idea that comes to
+          mind. Generating several variations encourages experimentation.
+          A single video topic can be approached through curiosity, education,
+          storytelling, contrast, questions, mistakes, myths, or practical
+          advice.
+        </p>
+
+        <h3>Useful for New Creators</h3>
+
+        <p>
+          Beginners often understand their subject but struggle with turning
+          that knowledge into an engaging introduction. A hook generator can
+          provide starting points that help them learn how different openings
+          are structured.
+        </p>
+
+        <h3>Useful for Experienced Creators</h3>
+
+        <p>
+          Experienced creators can also use AI for ideation. The tool can
+          function as a brainstorming partner when a creator already has a
+          topic but wants more alternatives before recording.
+        </p>
+
+        <h2>How to Write Better Instagram Reels Hooks</h2>
+
+        <p>
+          Good Reel hooks are usually specific rather than vague. Consider
+          what the intended viewer cares about and introduce that subject
+          quickly. Avoid spending too much of the opening explaining background
+          information if the important point can be communicated more directly.
+        </p>
+
+        <p>
+          Another useful approach is to create a clear information gap. The
+          viewer should understand enough to become interested without feeling
+          that the entire video has already been explained. The rest of the
+          Reel can then deliver the promised information.
+        </p>
+
+        <h2>How to Write Better YouTube Shorts Hooks</h2>
+
+        <p>
+          YouTube Shorts can benefit from concise openings that immediately
+          establish the topic or curiosity. A useful opening can combine a
+          strong statement with a clear reason to continue watching.
+        </p>
+
+        <p>
+          Educational Shorts can introduce a problem or unexpected fact.
+          Entertainment Shorts can begin with an unusual situation. Business
+          Shorts can introduce a mistake, opportunity, or lesson. The ideal
+          approach depends on the audience and subject rather than following
+          one universal formula.
+        </p>
+
+        <h2>Hook Formulas You Can Experiment With</h2>
+
+        <h3>Curiosity Formula</h3>
+
+        <p>
+          Introduce an interesting result or observation without immediately
+          explaining every detail. This creates a reason for the viewer to
+          discover the explanation.
+        </p>
+
+        <h3>Problem Formula</h3>
+
+        <p>
+          Identify a problem experienced by your target audience and transition
+          into a useful solution. This approach works especially well for
+          educational, business, productivity, technology, and fitness topics.
+        </p>
+
+        <h3>Question Formula</h3>
+
+        <p>
+          Ask a focused question that relates directly to the viewer's
+          situation. Strong questions can encourage viewers to mentally answer
+          before continuing with the video.
+        </p>
+
+        <h3>Story Formula</h3>
+
+        <p>
+          Start with an interesting moment from a story rather than beginning
+          with a long introduction. The context can be revealed naturally as
+          the video progresses.
+        </p>
+
+        <h3>Mistake Formula</h3>
+
+        <p>
+          Introduce a common mistake and explain why it matters. This can be
+          effective for tutorial content because viewers who recognize the
+          mistake have an immediate reason to listen.
+        </p>
+
+        <h2>Who Can Use HookForge?</h2>
+
+        <p>
+          HookForge can be useful for many types of creators. Social media
+          influencers can use it for daily content brainstorming. Small
+          businesses can use it to develop short promotional videos. Educators
+          can generate introductions for lessons and explanations. Coaches and
+          consultants can brainstorm openings for educational content.
+        </p>
+
+        <p>
+          Marketing teams can also use the generator during creative ideation.
+          Instead of treating AI-generated hooks as final copy, teams can use
+          them as starting points and refine the wording according to campaign
+          requirements, brand guidelines, and audience research.
+        </p>
+
+        <h2>Tips for Getting Better AI Hook Results</h2>
+
+        <ul>
+          <li>Describe the exact subject of your video.</li>
+          <li>Mention who the intended viewer is when relevant.</li>
+          <li>Include your niche or industry.</li>
+          <li>Choose a tone that matches your normal content.</li>
+          <li>Generate multiple variations rather than relying on one idea.</li>
+          <li>Rewrite generated hooks so they sound natural in your own voice.</li>
+          <li>Make sure the hook accurately represents what the video delivers.</li>
+          <li>Test different creative approaches over multiple videos.</li>
+        </ul>
+
+        <h2>AI Hooks Should Support Real Value</h2>
+
+        <p>
+          An attention-grabbing opening is only one part of a successful video.
+          The content that follows still needs to deliver on the expectation
+          created by the hook. Avoid making promises that the video cannot
+          support. A clear and accurate hook can create a better connection
+          between the viewer's expectation and the actual content.
+        </p>
+
+        <p>
+          Think of the hook as the entrance to the video rather than the entire
+          strategy. Strong content, useful information, clear storytelling,
+          good editing, appropriate visuals, audience understanding, and
+          consistent publishing can all contribute to the overall performance
+          of short-form content.
+        </p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div id="faq" class="mt-6 space-y-3">
+
+          <div class="faq-item rounded-2xl border border-white/10 bg-white/[.03]">
+            <button
+              type="button"
+              class="flex w-full items-center justify-between gap-4 p-5 text-left"
+              aria-expanded="false"
+            >
+              <span class="text-sm font-bold text-white">
+                What is a Reels and Shorts hook?
+              </span>
+              <span class="faq-icon text-xl text-violet-300">+</span>
+            </button>
+
+            <div class="faq-answer px-5">
+              <p class="pb-5 text-sm leading-7 text-slate-500">
+                A hook is the opening idea, sentence, visual concept, or
+                statement designed to make viewers pay attention during the
+                first moments of a short-form video.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item rounded-2xl border border-white/10 bg-white/[.03]">
+            <button
+              type="button"
+              class="flex w-full items-center justify-between gap-4 p-5 text-left"
+              aria-expanded="false"
+            >
+              <span class="text-sm font-bold text-white">
+                Is HookForge free to use?
+              </span>
+              <span class="faq-icon text-xl text-violet-300">+</span>
+            </button>
+
+            <div class="faq-answer px-5">
+              <p class="pb-5 text-sm leading-7 text-slate-500">
+                HookForge is designed as a free AI hook generation tool with
+                unlimited free usage.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item rounded-2xl border border-white/10 bg-white/[.03]">
+            <button
+              type="button"
+              class="flex w-full items-center justify-between gap-4 p-5 text-left"
+              aria-expanded="false"
+            >
+              <span class="text-sm font-bold text-white">
+                Can I use these hooks for Instagram Reels?
+              </span>
+              <span class="faq-icon text-xl text-violet-300">+</span>
+            </button>
+
+            <div class="faq-answer px-5">
+              <p class="pb-5 text-sm leading-7 text-slate-500">
+                Yes. You can generate hook ideas specifically designed for
+                Instagram Reels.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item rounded-2xl border border-white/10 bg-white/[.03]">
+            <button
+              type="button"
+              class="flex w-full items-center justify-between gap-4 p-5 text-left"
+              aria-expanded="false"
+            >
+              <span class="text-sm font-bold text-white">
+                Can I use HookForge for YouTube Shorts?
+              </span>
+              <span class="faq-icon text-xl text-violet-300">+</span>
+            </button>
+
+            <div class="faq-answer px-5">
+              <p class="pb-5 text-sm leading-7 text-slate-500">
+                Yes. The generator can create hook ideas suitable for
+                YouTube Shorts.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item rounded-2xl border border-white/10 bg-white/[.03]">
+            <button
+              type="button"
+              class="flex w-full items-center justify-between gap-4 p-5 text-left"
+              aria-expanded="false"
+            >
+              <span class="text-sm font-bold text-white">
+                Can I copy or download my generated hooks?
+              </span>
+              <span class="faq-icon text-xl text-violet-300">+</span>
+            </button>
+
+            <div class="faq-answer px-5">
+              <p class="pb-5 text-sm leading-7 text-slate-500">
+                Yes. Generated hooks can be copied individually or downloaded
+                as a text file.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item rounded-2xl border border-white/10 bg-white/[.03]">
+            <button
+              type="button"
+              class="flex w-full items-center justify-between gap-4 p-5 text-left"
+              aria-expanded="false"
+            >
+              <span class="text-sm font-bold text-white">
+                Does a good hook guarantee viral views?
+              </span>
+              <span class="faq-icon text-xl text-violet-300">+</span>
+            </button>
+
+            <div class="faq-answer px-5">
+              <p class="pb-5 text-sm leading-7 text-slate-500">
+                No. A hook can improve the opening of a video, but views also
+                depend on content quality, audience interest, retention,
+                timing, topic, distribution, and many other factors.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 bg-slate-950/70">
+    <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+
+      <div class="grid gap-8 md:grid-cols-3">
+
+        <div>
+          <div class="flex items-center gap-3">
+            <svg
+              width="36"
+              height="36"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <rect
+                x="2"
+                y="2"
+                width="44"
+                height="44"
+                rx="14"
+                fill="url(#footerLogoGradient)"
+              />
+              <path
+                d="M15 24.5C15 18.7 18.8 15 24.3 15C28.4 15 31.3 17.1 32.5 20.5"
+                stroke="white"
+                stroke-width="3.2"
+                stroke-linecap="round"
+              />
+              <path
+                d="M33 23.5C33 29.3 29.2 33 23.7 33C19.6 33 16.7 30.9 15.5 27.5"
+                stroke="white"
+                stroke-width="3.2"
+                stroke-linecap="round"
+              />
+              <path
+                d="M24 20L28 24L24 28"
+                stroke="white"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <defs>
+                <linearGradient
+                  id="footerLogoGradient"
+                  x1="5"
+                  y1="5"
+                  x2="43"
+                  y2="43"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#8B5CF6"/>
+                  <stop offset=".52" stop-color="#EC4899"/>
+                  <stop offset="1" stop-color="#38BDF8"/>
+                </linearGradient>
+              </defs>
+            </svg>
+
+            <div>
+              <div class="font-black text-white">
+                HookForge
+              </div>
+              <div class="text-xs text-slate-600">
+                Creator Intelligence
+              </div>
+            </div>
+          </div>
+
+          <p class="mt-4 max-w-sm text-sm leading-6 text-slate-500">
+            A simple AI-powered creative tool for brainstorming hooks and
+            opening ideas for short-form video content.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-sm font-bold text-white">
+            Quick Links
+          </h2>
+
+          <div class="mt-4 flex flex-col gap-3 text-sm text-slate-500">
+            <a href="#top" class="transition hover:text-white">
+              Home
+            </a>
+
+            <a
+              href="#generator"
+              class="transition hover:text-white"
+            >
+              Hook Generator
+            </a>
+
+            <a
+              href="#faq"
+              class="transition hover:text-white"
+            >
+              FAQ
+            </a>
+
+            <a
+              href="https://fixoraa.tech"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="transition hover:text-white"
+            >
+              More Tools
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-sm font-bold text-white">
+            Information
+          </h2>
+
+          <div class="mt-4 flex flex-col gap-3 text-sm text-slate-500">
+            <a href="#about" class="transition hover:text-white">
+              About
+            </a>
+
+            <a href="#contact" class="transition hover:text-white">
+              Contact
+            </a>
+
+            <a href="#privacy" class="transition hover:text-white">
+              Privacy Policy
+            </a>
+
+            <a href="#terms" class="transition hover:text-white">
+              Terms of Service
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-10 border-t border-white/10 pt-6 text-center text-xs text-slate-600">
+        © <span id="year"></span> HookForge. All Rights Reserved.
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- HIDDEN SEO SUPPORT SECTIONS -->
+  <section id="about" class="hidden" aria-hidden="true">
+    HookForge is an AI-powered Instagram Reels and YouTube Shorts hook
+    generation tool designed to help creators brainstorm short-form video
+    openings quickly.
+  </section>
+
+  <section id="contact" class="hidden" aria-hidden="true">
+    Contact information for HookForge can be added by the website owner.
+  </section>
+
+  <section id="privacy" class="hidden" aria-hidden="true">
+    Privacy Policy content can be added according to the website operator's
+    actual data practices and advertising providers.
+  </section>
+
+  <section id="terms" class="hidden" aria-hidden="true">
+    Terms of Service content can be added according to the website operator's
+    actual service terms.
+  </section>
+
+  <!-- APPLICATION JAVASCRIPT -->
+  <script>
+    const topicInput = document.getElementById("topic");
+    const nicheInput = document.getElementById("niche");
+    const platformInput = document.getElementById("platform");
+    const styleInput = document.getElementById("style");
+    const toneInput = document.getElementById("tone");
+
+    const generateBtn = document.getElementById("generateBtn");
+    const generateText = document.getElementById("generateText");
+    const generateIcon = document.getElementById("generateIcon");
+
+    const charCount = document.getElementById("charCount");
+
+    const emptyState = document.getElementById("emptyState");
+    const loadingState = document.getElementById("loadingState");
+    const hookResults = document.getElementById("hookResults");
+
+    const errorBox = document.getElementById("errorBox");
+    const downloadBtn = document.getElementById("downloadBtn");
+
+    let generatedHooks = [];
+
+    topicInput.addEventListener("input", () => {
+      charCount.textContent =
+        `${topicInput.value.length} / 1200`;
+    });
+
+    function showError(message) {
+      errorBox.textContent = message;
+      errorBox.classList.remove("hidden");
+    }
+
+    function hideError() {
+      errorBox.textContent = "";
+      errorBox.classList.add("hidden");
+    }
+
+    function setLoading(isLoading) {
+      generateBtn.disabled = isLoading;
+
+      if (isLoading) {
+        generateText.textContent = "Generating...";
+        generateIcon.classList.add("animate-spin");
+        emptyState.classList.add("hidden");
+        hookResults.classList.add("hidden");
+        loadingState.classList.remove("hidden");
+        loadingState.classList.add("flex");
+        downloadBtn.classList.add("hidden");
+      } else {
+        generateText.textContent = "Generate Hooks";
+        generateIcon.classList.remove("animate-spin");
+        loadingState.classList.add("hidden");
+        loadingState.classList.remove("flex");
+      }
+    }
+
+    function cleanResponse(text) {
+      if (!text) {
+        return "";
+      }
+
+      return text
+        .replace(/```json/gi, "")
+        .replace(/```/g, "")
+        .trim();
+    }
+
+    function extractJSON(text) {
+      const cleaned = cleanResponse(text);
+
+      try {
+        return JSON.parse(cleaned);
+      } catch (firstError) {
+        const arrayStart = cleaned.indexOf("[");
+        const arrayEnd = cleaned.lastIndexOf("]");
+
+        if (arrayStart !== -1 && arrayEnd !== -1) {
+          const possibleArray =
+            cleaned.substring(arrayStart, arrayEnd + 1);
+
+          try {
+            return JSON.parse(possibleArray);
+          } catch (secondError) {
+            return null;
+          }
+        }
+
+        return null;
+      }
+    }
+
+    function normalizeHooks(data) {
+      if (Array.isArray(data)) {
+        return data;
+      }
+
+      if (data && Array.isArray(data.hooks)) {
+        return data.hooks;
+      }
+
+      return [];
+    }
+
+    function escapeHTML(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function createHookCard(item, index) {
+      let hook = "";
+      let style = "";
+      let angle = "";
+
+      if (typeof item === "string") {
+        hook = item;
+      } else {
+        hook =
+          item.hook ||
+          item.text ||
+          item.title ||
+          "";
+
+        style =
+          item.style ||
+          "";
+
+        angle =
+          item.angle ||
+          item.reason ||
+          "";
+      }
+
+      if (!hook) {
+        return "";
+      }
+
+      const safeHook = escapeHTML(hook);
+      const safeStyle = escapeHTML(style);
+      const safeAngle = escapeHTML(angle);
+
+      return `
+        <div
+          class="hook-card rounded-xl border border-white/10 bg-white/[.03] p-4 animate-slide-up"
+          style="animation-delay:${index * 45}ms"
+        >
+          <div class="flex items-start gap-3">
+
+            <div
+              class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-violet-500/20 to-pink-500/20 text-xs font-black text-violet-200"
+            >
+              ${index + 1}
+            </div>
+
+            <div class="min-w-0 flex-1">
+              ${
+                safeStyle
+                  ? `
+                    <div class="mb-2 text-[10px] font-bold uppercase tracking-[.16em] text-violet-300">
+                      ${safeStyle}
+                    </div>
+                  `
+                  : ""
+              }
+
+              <p
+                class="text-sm font-semibold leading-6 text-slate-100"
+              >
+                ${safeHook}
+              </p>
+
+              ${
+                safeAngle
+                  ? `
+                    <p class="mt-2 text-xs leading-5 text-slate-500">
+                      ${safeAngle}
+                    </p>
+                  `
+                  : ""
+              }
+
+              <button
+                type="button"
+                data-copy="${encodeURIComponent(hook)}"
+                class="copy-hook mt-3 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-xs font-bold text-slate-400 transition hover:bg-violet-500/10 hover:text-violet-200"
+              >
+                Copy Hook
+              </button>
+            </div>
+
+          </div>
+        </div>
+      `;
+    }
+
+    function renderHooks(hooks) {
+      generatedHooks = hooks;
+
+      hookResults.innerHTML =
+        hooks
+          .map((item, index) => createHookCard(item, index))
+          .join("");
+
+      emptyState.classList.add("hidden");
+      loadingState.classList.add("hidden");
+      loadingState.classList.remove("flex");
+      hookResults.classList.remove("hidden");
+
+      if (hooks.length > 0) {
+        downloadBtn.classList.remove("hidden");
+      }
+
+      document.querySelectorAll(".copy-hook").forEach(button => {
+        button.addEventListener("click", async () => {
+          const value =
+            decodeURIComponent(button.dataset.copy || "");
+
+          try {
+            await navigator.clipboard.writeText(value);
+
+            const original = button.textContent;
+
+            button.textContent = "Copied ✓";
+
+            setTimeout(() => {
+              button.textContent = original;
+            }, 1400);
+
+          } catch (error) {
+            showError(
+              "Copy failed. Please select and copy the hook manually."
+            );
+          }
+        });
+      });
+    }
+
+    function buildPrompt() {
+      const topic = topicInput.value.trim();
+      const niche = nicheInput.value.trim();
+      const platform = platformInput.value;
+      const style = styleInput.value;
+      const tone = toneInput.value;
+
+      return `
+You are an expert short-form video content strategist.
+
+Create 10 original hooks for a creator making ${platform} content.
+
+VIDEO TOPIC:
+${topic}
+
+NICHE:
+${niche || "Not specified"}
+
+PREFERRED HOOK STYLE:
+${style}
+
+PREFERRED TONE:
+${tone}
+
+Requirements:
+1. Make every hook concise and natural.
+2. Make each hook meaningfully different.
+3. Avoid generic filler.
+4. Do not falsely promise guaranteed virality.
+5. Do not use fake statistics.
+6. Do not use deceptive claims.
+7. Make the hooks suitable for spoken short-form video openings.
+8. Keep most hooks between 8 and 22 words.
+9. Include a mixture of direct openings and curiosity-driven openings where appropriate.
+10. Make the wording easy for a creator to say naturally.
+11. Do not add explanations outside the requested JSON.
+12. Return ONLY valid JSON.
+
+Return this exact structure:
+[
+  {
+    "hook": "Hook text",
+    "style": "Short style name",
+    "angle": "One short sentence describing the creative angle"
+  }
+]
+      `.trim();
+    }
+
+    async function generateHooks() {
+      hideError();
+
+      const topic = topicInput.value.trim();
+
+      if (!topic) {
+        showError(
+          "Please enter your video topic before generating hooks."
+        );
+
+        topicInput.focus();
+
+        return;
+      }
+
+      if (topic.length < 8) {
+        showError(
+          "Please provide a little more detail about your video topic."
+        );
+
+        topicInput.focus();
+
+        return;
+      }
+
+      setLoading(true);
+
+      try {
+        const prompt = buildPrompt();
+
+        const response = await fetch(
+          "https://fixoraa-universal-backend.onrender.com/api/groq",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              model: "llama-3.1-8b-instant",
+              messages: [
+                {
+                  role: "user",
+                  content: prompt
+                }
+              ]
+            })
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error(
+            `Backend request failed with status ${response.status}.`
+          );
+        }
+
+        const data = await response.json();
+
+        let rawText = "";
+
+        if (
+          data &&
+          data.choices &&
+          data.choices[0] &&
+          data.choices[0].message
+        ) {
+          rawText =
+            data.choices[0].message.content || "";
+        }
+
+        if (!rawText && typeof data.content === "string") {
+          rawText = data.content;
+        }
+
+        if (!rawText && typeof data.response === "string") {
+          rawText = data.response;
+        }
+
+        if (!rawText && typeof data.text === "string") {
+          rawText = data.text;
+        }
+
+        if (!rawText) {
+          throw new Error(
+            "The AI backend returned an empty response."
+          );
+        }
+
+        const parsed = extractJSON(rawText);
+        const hooks = normalizeHooks(parsed);
+
+        if (!hooks.length) {
+          throw new Error(
+            "The AI response could not be converted into hook ideas. Please try again."
+          );
+        }
+
+        renderHooks(hooks);
+
+      } catch (error) {
+        console.error(error);
+
+        loadingState.classList.add("hidden");
+        loadingState.classList.remove("flex");
+
+        emptyState.classList.remove("hidden");
+        hookResults.classList.add("hidden");
+
+        showError(
+          "Something went wrong while generating hooks. Please check that your backend is running and try again."
+        );
+
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    generateBtn.addEventListener(
+      "click",
+      generateHooks
+    );
+
+    topicInput.addEventListener(
+      "keydown",
+      event => {
+        if (
+          (event.ctrlKey || event.metaKey) &&
+          event.key === "Enter"
+        ) {
+          generateHooks();
+        }
+      }
+    );
+
+    downloadBtn.addEventListener(
+      "click",
+      () => {
+        if (!generatedHooks.length) {
+          return;
+        }
+
+        const lines = [
+          "HookForge - Generated Hooks",
+          "================================",
+          ""
+        ];
+
+        generatedHooks.forEach((item, index) => {
+          const hook =
+            typeof item === "string"
+              ? item
+              : item.hook || item.text || "";
+
+          const style =
+            typeof item === "object"
+              ? item.style || ""
+              : "";
+
+          lines.push(
+            `${index + 1}. ${hook}`
+          );
+
+          if (style) {
+            lines.push(`Style: ${style}`);
+          }
+
+          lines.push("");
+        });
+
+        const blob = new Blob(
+          [lines.join("\n")],
+          {
+            type: "text/plain;charset=utf-8"
+          }
+        );
+
+        const url =
+          URL.createObjectURL(blob);
+
+        const anchor =
+          document.createElement("a");
+
+        anchor.href = url;
+        anchor.download =
+          "hookforge-generated-hooks.txt";
+
+        document.body.appendChild(anchor);
+
+        anchor.click();
+
+        anchor.remove();
+
+        URL.revokeObjectURL(url);
+      }
+    );
+
+    document.querySelectorAll(".faq-item button").forEach(
+      button => {
+        button.addEventListener(
+          "click",
+          () => {
+            const item =
+              button.closest(".faq-item");
+
+            const currentlyActive =
+              item.classList.contains("active");
+
+            document.querySelectorAll(".faq-item").forEach(
+              other => {
+                other.classList.remove("active");
+
+                const otherButton =
+                  other.querySelector("button");
+
+                if (otherButton) {
+                  otherButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                  );
+                }
+              }
+            );
+
+            if (!currentlyActive) {
+              item.classList.add("active");
+
+              button.setAttribute(
+                "aria-expanded",
+                "true"
+              );
+            }
+          }
+        );
+      }
+    );
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    window.addEventListener(
+      "error",
+      event => {
+        console.error(
+          "Runtime error:",
+          event.error || event.message
+        );
+      }
+    );
+  </script>
+
+</body>
+</html>
